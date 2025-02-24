@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://resources.finalsite.net/images/f_auto,q_auto/v1626100427/k12albemarleorg/uj41eppe27bunrvhwnep/PowerSchoolLogos_Vertical-01.png" type="image/x-icon">
     <title>Login I Schoology</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #6f3e01;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+</style>
 </head>
 <body>
-    <p> Shrek - What's the password?</p>
-    <input id="pwd" type="password">
-    <button onclick="validate()">Submit</button>
+    <h2>Shrek - What's the Password?</h2>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="checkPassword()">Submit</button>
 
     <script>
-        function validate() {
-            const pwd = document.getElementById("pwd");
-            if (pwd.value === "robloxsl9912") {
-                window.open("https://shartshrek.github.io/iuhsfhpioihaofjam", "_self");
+        function checkPassword() {
+            var enteredPassword = document.getElementById('password').value;
+            var correctPassword = 'robloxsl9912';  // Replace this with the actual correct password
+
+            if (enteredPassword !== "robloxsl9912") {
+                alert('GET OFF MY SWAMP!');
+                window.close();  // Close the tab
+            } 
+            else {
+                alert('Come in Quick.');
+                {
+                    window.open("https://shartshrek.github.io/iuhsfhpioihaofjam", "_self");
+                }
             }
         }
     </script>
