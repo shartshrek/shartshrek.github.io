@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle I Schoology</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6f3e01;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-gap: 10px;
+        }
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #322000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .square:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="square" data-id="1">1</div>
+    <div class="square" data-id="2">2</div>
+    <div class="square" data-id="3">3</div>
+    <div class="square" data-id="4">4</div>
+    <div class="square" data-id="5">5</div>
+    <div class="square" data-id="6">6</div>
+    <div class="square" data-id="7">7</div>
+    <div class="square" data-id="8">8</div>
+    <div class="square" data-id="9">9</div>
+    <div class="square" data-id="10">10</div>
+</div>
+
+<script>
+    const correctOrder = [7, 6, 2, 5, 6, 9, 7, 5, 9, 9, 1, 2];  // Define the correct order of pressing squares
+    let userSequence = [];  // Keep track of the order in which squares are pressed
+
+    document.querySelectorAll('.square').forEach(square => {
+        square.addEventListener('click', function() {
+            const squareId = parseInt(this.getAttribute('data-id'));
+            userSequence.push(squareId);
+
+            // Check if the sequence is correct so far
+            if (userSequence.length === correctOrder.length) {
+                if (JSON.stringify(userSequence) === JSON.stringify(correctOrder)) {
+                    window.location.href = 'https://shartshrek.github.io/iuhsfhpioihaofjam';  // Redirect to the new website
+                } else {
+                    alert('GET OFF MY SWAMP!');
+                    userSequence = [];  // Reset sequence if wrong order
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
