@@ -66,6 +66,19 @@
             padding: 0 20px;
         }
     </style>
+    <script>
+        // Function to handle key press and open the file
+        function handleKeyPress(event) {
+            // Check if both Alt and Shift are pressed together
+            if (event.altKey && event.shiftKey) {
+                // Open the file by redirecting the browser
+                window.location.href = 'schoology.html'; // Use the actual file path
+            }
+        }
+
+        // Add event listener to listen for key press
+        document.addEventListener('keydown', handleKeyPress);
+    </script>
 </head>
 <body>
     <header>
