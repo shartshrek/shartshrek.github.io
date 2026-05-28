@@ -1,197 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, noindex, nofollow">
-    <title>Home I Schoology</title>
-    <link rel="icon" href="https://resources.finalsite.net/images/f_auto,q_auto/v1626100427/k12albemarleorg/uj41eppe27bunrvhwnep/PowerSchoolLogos_Vertical-01.png" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #e1e1e1;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrek's Shack</title>
 
-        header {
-            background-color: #2e0000;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-        }
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-        nav {
-            background-color: #bfbfbf;
-            display: flex;
-            justify-content: center;
-            padding: 5px;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        nav a {
-            color: #00306f;
-            text-decoration: black;
-            padding: 10px 20px;
-            margin: 5 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+:root {
+    --glass-bg:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.12),
+            rgba(255,255,255,0.03)
+        );
 
-        nav a:hover {
-            background-color: #0099cc;
-        }
+    --glass-border:
+        1px solid rgba(255,255,255,0.12);
 
-        section {
-            padding: 40px 160px;
-            text-align: center;
-        }
+    --glass-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        inset 0 -8px 20px rgba(0,0,0,0.35),
+        0 0 30px rgba(0,0,0,0.45);
 
-        section h2 {
-            color: #470101;
-            font-size: 2rex;
-        }
+    --text: rgba(255,255,255,0.92);
+}
 
-        footer {
-            background-color: #333;
-            color: #3f0202;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+body {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    background: #0a0a0a;
+    color: var(--text);
+    overflow-x: hidden;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-    </style>
-    <script>
-        // Function to handle key press and open the file
-        function handleKeyPress(event) {
-            // Check if both Alt and Shift are pressed together
-            if (event.altKey && event.shiftKey) {
-                // Open the file by redirecting the browser
-                window.location.href = 'https://www.google.com'; // Use the actual file path
-            }
-        }
+/* BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 20%, #222, transparent 40%),
+        radial-gradient(circle at 80% 80%, #111, transparent 40%),
+        radial-gradient(circle at 50% 50%, #151515, transparent 60%);
+    opacity: 0.9;
+}
 
-        // Add event listener to listen for key press
-        document.addEventListener('keydown', handleKeyPress);
-    </script>
+/* MAIN WRAPPER */
+.wrapper {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 0 80px;
+}
+
+/* HEADER */
+header {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(30px) saturate(140%);
+    border-radius: 28px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--glass-shadow);
+    margin-bottom: 25px;
+    animation: fadeIn 0.8s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(255,255,255,0.15);
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--glass-shadow);
+    transition: all 0.25s ease;
+}
+
+nav a:hover {
+    transform: translateY(-3px) scale(1.03);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.18),
+            rgba(255,255,255,0.05)
+        );
+}
+
+/* SECTIONS */
+section {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    backdrop-filter: blur(30px) saturate(140%);
+    border-radius: 28px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--glass-shadow);
+    animation: fadeIn 0.8s ease;
+}
+
+section h2,
+section h1 {
+    margin-top: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+
+/* LINKS */
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.link-grid a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 999px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.12),
+            rgba(255,255,255,0.03)
+        );
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        inset 0 -4px 10px rgba(0,0,0,0.35),
+        0 0 12px rgba(0,0,0,0.4);
+
+    transition: all 0.25s ease;
+}
+
+.link-grid a:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    opacity: 0.5;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+
+<script>
+function handleKeyPress(event) {
+    if (event.altKey && event.shiftKey) {
+        window.location.href = "https://www.google.com";
+    }
+}
+
+document.addEventListener("keydown", handleKeyPress);
+</script>
 </head>
+
 <body>
-    <header>
-        <h1>Shrek's Shack</h1>
-    </header>
-    
-    <nav>
-        <a href="#Notice">Notice
-        <a href="#Links">Links</a>
-        <a href="#ROMS">ROMS</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
+<div class="wrapper">
 
+<header>
+    <h1>Shrek's Shack</h1>
+</header>
 
-     <section id="Notice">
-        <div class="container">
-            <h1>Notice</h1>
-        <nav>
-             <ul>
-                <li><a href="" target="_blank">download the site from the button up top</a></li>
-            <p>     </p>         
-        </div>
-    </section>
+<nav>
+    <a href="#notice">Notice</a>
+    <a href="#links">Games</a>
+    <a href="#roms">ROMS</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 
+<section id="notice">
+    <h2>Notice</h2>
 
-                
-    
-    <section id="Links">
-        <div class="container">
-            <h1>links</h1>
-        <nav>
-            <ul>
-                <li><a href="https://shartshrek.github.io/1v1.lol" target="_blank">1v1.lol</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Eaglercraft" target="_blank">Eaglercraft</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/qwsdkmizoi" target="_blank">Slope</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Operius" target="_blank">Operius</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Drive" target="_blank">Drive Mad</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Lite" target="_blank">Geometry Dash</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Cookie" target="_blank">Cookie Clicker</a>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Retro" target="_blank">Retro Bowl</a>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Poly" target="_blank">Polytrack</a>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Moto/" target="_blank">Moto X3M</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/YoHoHo/" target="_blank">Yo Ho Ho</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Drift/" target="_blank">Drift Boss</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Basket/" target="_blank">Basket Random</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Devil/" target="_blank">Level Devil</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Surf/" target="_blank">Subway Surfers</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/Hook/" target="_blank">Stickman Hook</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/buckshotroulette/" target="_blank">Buckshot Roulette</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/terraria/" target="_blank">terraria(doesn't work on chromebook)</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/yomi-hustle/" target="_blank">Yomi Hustle</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/hk/" target="_blank">Hollow Knight</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/silksong/" target="_blank">Silksong</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/DS/" target="_blank">Nintendo DS Emulator</a></li>
-            <p>     </p>
-                <li><a href="https://shartshrek.github.io/GBA/" target="_blank">Game Boy Advance Emulator</a></li>
-            <p>  Make Sure to Fullscreen </p>
-            <p> It May Take Some Time to Load </p>
-        </div>
-    </section>
+    <div class="link-grid">
+        <a href="#">Download Site</a>
+    </div>
 
-    <section id="ROMS">
-        <div class="container">
-            <h1>ROM Library (broken now)</h1>
-        <nav>
-            <ul>
-                <li><a href="https://drive.google.com/drive/folders/15oMGqs4XKgWLD-tzzafkWW9kOEkr13jC?usp=drive_link" target="_blank">Nintendo DS Roms</a></li>
-            <p>     </p>
-                <li><a href="https://drive.google.com/drive/folders/1u1YXUhGy7EHy20RnDuub9mLRZh4aJayG?usp=drive_link" target="_blank">Game Boy Advance Roms</a></li>
-        </div>
-    </section>
+    <div class="link-grid">
+        <a href="#" id="installBtn">Download / Install Site</a>
+    </div>
 
-    <section id="services">
-        <div class="container">
-            <h2>Misc</h2>
-            <p>     </p>
-            <li><a href="https://shartshrek.github.io/soundboard/" target="_blank">Soundboard</a></li>
-            <p>     </p>
-        </div>
-    </section>
+    <div style="margin-top:20px;">
+        <label style="
+            display:flex;
+            align-items:center;
+            gap:12px;
+            justify-content:center;
+            opacity:0.85;
+        ">
+            <input type="checkbox" id="blankMode">
+            Open Pages in about:blank
+        </label>
+    </div>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Create an Issue on Github to Report a Problem</h2>
-            <p></p>
-        </div>
-    </section>
-    
-    <footer>
-    </footer>
+</section>
+
+<section id="links">
+    <h2>Games & Emulators</h2>
+
+    <div class="link-grid">
+        <a href="https://shartshrek.github.io/1v1.lol" class="game-link">1v1.lol</a>
+        <a href="https://shartshrek.github.io/Eaglercraft" class="game-link">Eaglercraft</a>
+        <a href="https://shartshrek.github.io/qwsdkmizoi" class="game-link">Slope</a>
+        <a href="https://shartshrek.github.io/Operius" class="game-link">Operius</a>
+        <a href="https://shartshrek.github.io/Drive" class="game-link">Drive Mad</a>
+        <a href="https://shartshrek.github.io/Lite" class="game-link">Geometry Dash</a>
+        <a href="https://shartshrek.github.io/Cookie" class="game-link">Cookie Clicker</a>
+        <a href="https://shartshrek.github.io/Retro" class="game-link">Retro Bowl</a>
+        <a href="https://shartshrek.github.io/Poly" class="game-link">Polytrack</a>
+        <a href="https://shartshrek.github.io/Moto/" class="game-link">Moto X3M</a>
+        <a href="https://shartshrek.github.io/YoHoHo/" class="game-link">Yo Ho Ho</a>
+        <a href="https://shartshrek.github.io/Drift/" class="game-link">Drift Boss</a>
+        <a href="https://shartshrek.github.io/Basket/" class="game-link">Basket Random</a>
+        <a href="https://shartshrek.github.io/Devil/" class="game-link">Level Devil</a>
+        <a href="https://shartshrek.github.io/Surf/" class="game-link">Subway Surfers</a>
+        <a href="https://shartshrek.github.io/Hook/" class="game-link">Stickman Hook</a>
+        <a href="https://shartshrek.github.io/buckshotroulette/" class="game-link">Buckshot Roulette</a>
+        <a href="https://shartshrek.github.io/terraria/" class="game-link">Terraria</a>
+        <a href="https://shartshrek.github.io/yomi-hustle/" class="game-link">Yomi Hustle</a>
+        <a href="https://shartshrek.github.io/hk/" class="game-link">Hollow Knight</a>
+        <a href="https://shartshrek.github.io/pvz-goty/" class="game-link">Plants Vs. Zombies</a>
+        <a href="https://shartshrek.github.io/20minutes/" class="game-link">20 Minutes Till Dawn</a>
+        <a href="https://shartshrek.github.io/granny/" class="game-link">Granny</a>
+        <a href="https://shartshrek.github.io/ultrapool/" class="game-link">Ultrapool</a>
+        <a href="https://shartshrek.github.io/silksong/" class="game-link">Silksong</a>
+        <a href="https://shartshrek.github.io/balatro/" class="game-link">Balatro</a>
+    </div>
+
+    <p style="margin-top:20px; opacity:0.7;">
+        Make sure to fullscreen. Some apps may take time to load.
+    </p>
+</section>
+
+<section id="roms">
+    <h2>Emulator</h2>
+
+    <div class="link-grid">
+        <a href="https://shreks-emu.netlify.app" class="game-link">General Emulator</a>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Misc</h2>
+
+    <div class="link-grid">
+        <a href="https://shartshrek.github.io/soundboard/" class="game-link">Soundboard</a>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Support</h2>
+    <p>Create an issue on GitHub to report a problem.</p>
+</section>
+
+<footer>
+    Shrek's Shack • Glass UI Edition
+</footer>
+
+</div>
+
+<script>
+// Handle opening links in about:blank if checkbox is checked
+document.addEventListener("DOMContentLoaded", () => {
+    const blankCheckbox = document.getElementById("blankMode");
+    const gameLinks = document.querySelectorAll(".game-link");
+
+    gameLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            if (blankCheckbox.checked) {
+                e.preventDefault();
+                // Open an about:blank page
+                const newWin = window.open("about:blank", "_blank");
+                newWin.document.write(`
+                    <html>
+                        <head>
+                            <title>Loading...</title>
+                        </head>
+                        <body style="margin:0; padding:0; overflow:hidden;">
+                            <iframe src="${link.href}" style="border:none; width:100vw; height:100vh;"></iframe>
+                        </body>
+                    </html>
+                `);
+                newWin.document.close();
+            }
+            // Otherwise, default behavior occurs
+        });
+    });
+});
+</script>
+
 </body>
 </html>
-
